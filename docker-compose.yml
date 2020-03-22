@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    image: djangoworker
+    command: bash -c "python manage.py makemigrations && python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
+    ports:
+    - "8000:8000"
+    volumes:
+    - .:/web
+    depends_on:
+      - redis
+  redis:
+    image: redis:alpine
+  celery:
+    build: .
+    command: celery -A web worker -l info
+    volumes:
+      - .:/web
+    depends_on:
+      - redis
+#  celery-beat:
+#    build: .
+#    command: celery -A web beat -l info
+#    volumes:
+#      - .:/web
+#    depends_on:
+#      - redis
