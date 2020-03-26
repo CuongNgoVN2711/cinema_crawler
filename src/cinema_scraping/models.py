@@ -4,19 +4,20 @@ import json
 
 
 # Create your models here.
-class ScrapedMovieItem(models.Model):
+class ScrapedDate(models.Model):
     id = models.AutoField(primary_key=True)
     # unique_id = models.CharField(max_length=100, n)
-    data = models.TextField()
-    date = models.DateTimeField(default=timezone.now())
+    month = models.PositiveSmallIntegerField()
+    day_of_week = models.CharField(max_length=3)
+    day_of_month = models.PositiveSmallIntegerField()
 
-    @property
-    def to_dict(self):
-        ret = {
-            'data': json.load(self.data),
-            'date': self.date
-        }
-        return ret
+    # @property
+    # def to_dict(self):
+    #     ret = {
+    #         'data': json.load(self.data),
+    #         'date': self.date
+    #     }
+    #     return ret
 
     def __str__(self):
         return "Item {}".format(self.id)

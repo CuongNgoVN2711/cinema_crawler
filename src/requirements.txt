@@ -18,6 +18,7 @@ asgiref==3.2.5
 scrapy==2.0.1
 python-scrapyd-api==2.1.2
 scrapyd==1.2.1
+scrapy-djangoitem==1.1.1
 
 # django rest framework
 djangorestframework==3.11.0
