@@ -13,13 +13,13 @@
 # DJANGO INTEGRATION
 import os
 import sys
+import django
 
-sys.path.append(os.path.dirname(os.path.abspath('.')))
+sys.path.append('../web')
 # Do not forget the change iCrawler part based on your project name
 os.environ['DJANGO_SETTINGS_MODULE'] = 'web.settings'
 
 # This is required only if Django Version > 1.8
-import django
 django.setup()
 # DJANGO INTEGRATION
 ####################
@@ -79,9 +79,10 @@ ROBOTSTXT_OBEY = True
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    'scrapy_app.pipelines.ScrapyAppPipeline': 300,
-#}
+ITEM_PIPELINES = {
+   'scrapy_app.pipelines.ScrapyAppPipeline': 300,
+}
+# SOMEPIPELINE_ENABLED = True
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html

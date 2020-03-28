@@ -10,7 +10,5 @@ from scrapy_djangoitem import DjangoItem
 from cinema_scraping import models
 
 
-class ScrapyAppItem(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
+class CinemaItem(DjangoItem):
+    django_model = models.ScrapedDate

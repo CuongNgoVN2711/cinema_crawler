@@ -11,8 +11,8 @@ from . import tasks
 
 
 # connect scrapyd service
-scrapyd_service = ScrapydAPI('http://localhost:6800')
-scrapyd_service.schedule('web', 'cinemar_crawler')
+# scrapyd_service = ScrapydAPI('http://localhost:6800')
+# scrapyd_service.schedule('web', 'cinemar_crawler')
 
 def is_valid_url(url):
     validate = URLValidator()
@@ -40,4 +40,5 @@ def get_movie_time(request):
         }
     }
     """
-    tasks.shared_task.delay(request.get('site_name', 'CGV'))
+    pass
+    # tasks.shared_task.delay(request.get('site_name', 'CGV'))
