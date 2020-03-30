@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'handleRequest',
-    'cinema_scraping'
+    'cinema_scraping',
+    'book_store_scraping'
 ]
 
 MIDDLEWARE = [
@@ -163,3 +164,5 @@ CELERY_TASK_SERIALIZER = 'json'
 # Graph API
 FB_ACCESS_TOKEN = "EAAVfZCG8yrEYBAOvhjlZARWDLOpZBDaaRUTF3iThl5zHvISmKczEvbhW7d7HLeLAji8qkbTh3HEMMvumAP7UH60AY9zMr7exf50uITSUF1OlB95hfgbLSqzFfAv7H8qbLKc9NpoIA2cmwQGCaMrJK2NdmEFg8WgJimUU8v7sreE95qHL4N6wZBmTTal69W7v4HDcION7trIBjdR8XBmh97T9OPwdFeTdn269ODcJHSCZB5At3QomP"
 os.environ["DJANGO_ALLOW_ASYNC_UNSAFE"] = "true"
+# HTTPERROR_ALLOWED_CODES  = [404]
+# USER_AGENT = "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.131 Safari/537.36"

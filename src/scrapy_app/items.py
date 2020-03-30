@@ -7,8 +7,13 @@
 
 import scrapy
 from scrapy_djangoitem import DjangoItem
-from cinema_scraping import models
+from cinema_scraping.models import ScrapedDate
+from book_store_scraping.models import Book
 
 
 class CinemaItem(DjangoItem):
-    django_model = models.ScrapedDate
+    django_model = ScrapedDate
+
+
+class BookStoreItem(DjangoItem):
+    django_model = Book

@@ -18,6 +18,7 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('handleRequest', include("handleRequest.urls")),
-    path('cinema_scraping', include("cinema_scraping.urls"))
+    path('handleRequest/', include("handleRequest.urls")),
+    path('cinema_scraping/', include("cinema_scraping.urls")),
+    path('book_scraping/', include("book_store_scraping.urls"))
 ]
