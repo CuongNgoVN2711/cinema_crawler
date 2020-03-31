@@ -32,3 +32,8 @@ class BookStoreCrawlerSpider(CrawlSpider):
                 }
             }
             yield item
+
+        next_page = response.css('.next::attr(href)').get()
+        if next_page is not None:
+            next_page = response.urljoin(next_page)
+            print(next_page)

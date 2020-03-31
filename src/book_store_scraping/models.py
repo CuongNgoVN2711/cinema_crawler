@@ -10,4 +10,5 @@ class Book(models.Model):
     review_number = models.CharField(max_length=20)
 
     def __str__(self):
-        return "{}".format(self.name)
+        price = str(self.price)
+        return "{} - {}VND - {} stars".format(self.name, price[:-3] + '.' + price[-3:], int(self.rating[0:-1])//20)
